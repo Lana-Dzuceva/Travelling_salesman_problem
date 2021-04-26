@@ -1,0 +1,14 @@
+footer{
+	background-color: grey;
+	height: 30vh;
+
+}
+
+.a{
+	height: 30vh;
+	background-color: lightgray;
+	border: 1px blue;
+}
+#a{
+	background-color: gold;
+}

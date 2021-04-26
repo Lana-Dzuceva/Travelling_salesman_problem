@@ -1,0 +1,26 @@
+footer{
+	background-color: grey;
+	height: 30vh;
+
+}
+main{
+	min-height: 80vh; 
+}
+.a{
+	height: 30vh;
+	background-color: lightgray;
+	border: 1px blue;
+	text-align: center;
+	padding: 3vh;
+	
+}
+#a{
+	background-color: gold;
+	font-size: 5em;
+}
+.big{
+    font-size: 3em;
+}
+#b{
+
+}	

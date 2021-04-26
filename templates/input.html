@@ -1,0 +1,63 @@
+<!--<!DOCTYPE html>-->
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <form class="login_form" method="post">
+        <div class="box">
+            <input type="text" name="point" placeholder="точка">
+        </div>
+        <div class="box">
+            <button type="submit" class="btn btn-primary" name="add" value="1">
+                Добавить
+            </button>
+        </div>
+        <div class="box">
+            <input type="text" name="start_point" placeholder="стартовая точка">
+        </div>
+        <div class="box">
+            <button type="submit" class="btn btn-primary" name="add_start"
+                    value="1">Добавить
+            </button>
+        </div>
+        <div class="box">
+            <button type="submit" class="btn btn-primary" name="calculate"
+                    value="1">рассчитать
+            </button>
+        </div>
+    </form>
+    {% for point in points %}
+    <div class="mycard">
+        <div class="text">{{ point }}</div>
+        <form method="post">
+            <button type="submit" class="" name="delete" value={{point}}>
+                удалить
+            </button>
+        </form>
+
+    </div>
+
+    {% endfor %}
+    {% if ans %}
+    {{ ans[0] }}{{ans[1]}}
+    {% endif %}
+
+    <form class="login_form" method="post">
+        {% if ans %}
+        <button type="submit" class="btn btn-primary" name="open_add"
+                value="1">Добавить в Базу данных
+        </button>
+        {% endif %}
+        {% if add %}
+        <div>author</div>
+        <input type="text" name="author" placeholder="Автор">
+        <div>title</div>
+        <input type="text" name="title" placeholder="Название маршрута">
+        <button type="submit" class="btn btn-primary" name="add_to_database"
+                value="1">Добавить в Базу данных
+        </button>
+    </form>
+    {% endif %}
+</div>
+
+
+{% endblock %}

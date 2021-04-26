@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+<form class="login_form" method="post">
+    <div><p>поиск по автору</p>
+        <input type="text" name="author" placeholder="Имя автора"></div>
+    <div><p>поиск по названию</p>
+        <input type="text" name="title" placeholder="Название маршрута"></div>
+    <div><p>сортировка</p>
+        <button type="submit" class="btn btn-primary" name="date"
+                value="1">Дате
+        </button>
+        <button type="submit" class="btn btn-primary" name="how_long"
+                value="1">Протяженности
+        </button>
+    </div>
+
+</form>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Path</th>
+        <th scope="col">Len</th>
+        <th scope="col">Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in trips%}
+    <tr>
+        <th scope="row">{{ row.id }}</th>
+        <td>{{row.title}}</td>
+        <td>{{row.author}}</td>
+        <td>{{row.path1}}</td>
+        <td>{{row.len1}}</td>
+        <td>{{ row.created_date }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

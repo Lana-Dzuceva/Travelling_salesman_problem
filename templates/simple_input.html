@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <form class="login_form" method="post">
+        <div class="box">
+            <input type="text" name="point" placeholder="точка">
+        </div>
+        <div class="box">
+            <button type="submit" class="btn btn-primary" name="add" value="1">
+                Добавить
+            </button>
+        </div>
+        <div class="box">
+            <button type="submit" class="btn btn-primary" name="calculate"
+                    value="1">рассчитать
+            </button>
+        </div>
+    </form>
+    {% for point in points %}
+    <div class="mycard">
+        <div class="text">{{ point }}</div>
+        <form method="post">
+            <button type="submit" class="" name="delete" value={{point}}>
+                удалить
+            </button>
+        </form>
+
+    </div>
+    {% endfor %}
+    {{ ans }}
+</div>
+
+
+{% endblock %}

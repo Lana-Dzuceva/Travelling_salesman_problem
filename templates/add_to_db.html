@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+
+
+<div>{{path}}</div>
+
+<form class="login_form" method="post">
+    <div>author</div>
+        <input type="text" name="author" placeholder="Автор">
+        <div>title</div>
+        <input type="text" name="title" placeholder="Название маршрута">
+    <button type="submit" class="btn btn-primary" name="add_to_database"
+            value="1">Добавить в Базу данных
+    </button>
+</form>
+<a href="/travel">вернуться</a>
+{% endblock %}
